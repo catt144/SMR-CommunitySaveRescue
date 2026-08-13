@@ -1,0 +1,59 @@
+# Save Rescue — Surviving Mars: Relaunched
+
+A one-shot cleanup tool for savegames that were played with the
+**Community Fix Pack** or the **Community Fix Pack: Opt-In Modules** and then
+lost them.
+
+**Install it only AFTER you have uninstalled those mods.** Load your save once,
+read what it says, and you can delete it again. While either of those mods is
+still installed this tool deliberately does nothing — they clean up after
+themselves, which is what makes this one unnecessary until they are gone.
+
+## What it actually removes
+
+Almost everything those mods leave in a save is inert once they are gone: a few
+timestamps and flags nothing reads any more. One thing is not:
+
+⭐ **A non-base Drone speed or carry dial keeps working forever.** The dial is
+stored as one of the game's own modifiers under the mod's name, so with the mod
+uninstalled your Drones keep the boost and nothing is left to take it off. That
+is the reason this tool exists.
+
+It also, for saves that lost an **older** build of the Fix Pack, restarts two
+things onto the game's own machinery: a meteor timer that was left dead, and a
+rain cycle still running the old mod's copy of the game's loop. Both cost one
+re-roll of that timer, once, and the tool says so on screen when it does it.
+
+## What it will not do
+
+* **It never deletes a repair.** The Fix Pack repairs a real bug in the game's
+  Large Wind Turbine tech buff, and that repair *lives in your save*. Removing
+  it would bring the bug back permanently, with no mod left installed to redo
+  it — so the tool keeps it, and tells you it kept it.
+* **It removes only entries it can name.** There is no pattern matching and no
+  guessing: the list is fixed, and a name that is not on it is left alone.
+* **It writes nothing into your save.** No flags of its own, no saved variables,
+  no background threads. Delete the mod and nothing of it remains — a save this
+  tool has run on is a save with less in it, never more.
+* **It never renames anything.** Names already inside savegames are contract.
+
+## Where the list comes from
+
+Not from a guess and not from a pattern sweep: from an item-by-item derivation
+over the shipped code of both mods, reviewed adversarially before a line of this
+was written. It lives in the Fix Pack's repository as
+`docs/agent/reports/D13_EXPOSED_SET.md` — §2b is the inventory, §5 is the
+keep/remove reasoning with a stated reason per entry, and §10 is the
+specification this mod is built to. `docs/PROVENANCE.md` here records what came
+from where.
+
+## Status
+
+**Pre-release 0.1.0, and NOT yet verified in a running game.** Everything in
+this repository is written against the game's shipped Lua source; the pass has
+not been measured on a real save yet. Do not treat it as tested.
+
+---
+
+*Development repo. `docs/` and `.claude/` never ship — see `metadata.lua`'s
+`ignore_files`.*
