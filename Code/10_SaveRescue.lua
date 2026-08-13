@@ -653,6 +653,15 @@ function SMRSaveRescue.HealThreads(opts)
 	return res
 end
 
+-- Every persisted name the table knows, in table order. The TestKit's list
+-- probe reads this and compares it against the derivation's own inventory, so
+-- that a name added to one and not the other FAILS instead of drifting quietly.
+function SMRSaveRescue.ResidueNames()
+	local out = {}
+	for _, row in ipairs(ROWS) do out[#out + 1] = row.name end
+	return out
+end
+
 -- Console helper: the whole curated table, with its actions and reasons.
 function SMRSaveRescue.ListResidue()
 	log("curated residue table — %d rows (source: D13_EXPOSED_SET.md in the Community Fix Pack repo)", #ROWS)
