@@ -49,9 +49,22 @@ from where.
 
 ## Status
 
-**Pre-release 0.1.0, and NOT yet verified in a running game.** Everything in
-this repository is written against the game's shipped Lua source; the pass has
-not been measured on a real save yet. Do not treat it as tested.
+**Pre-release 0.1.0 — built, and verified UNATTENDED in a running game
+(2026-08-13; audit-sustained the same day).** A nine-launch matrix measured the
+pass on a witness save carrying every removable entry: the automatic pass
+removed **1617 entries by name**, kept both keep-list repairs, healed a dead
+meteor timer and a legacy rain loop (both threads valid afterwards), removed
+**0** on the second load, and a save cleaned by this mod then loaded *without*
+it carried **zero** names of this mod's across 4510 objects and all 440
+persistable globals. Zero Lua errors in any launch. Full record + archived
+logs: the Fix Pack repo, `docs/agent/reports/D13_VERIFICATION.md` +
+`docs/archive/rs_*` (verification), §5 there (audit).
+
+⚠️ **Not yet: an attended pass.** Nobody has watched the two dialogs render on
+screen (they write no log line, so unattended runs cannot sample them), and
+"tested" in the parent project's vocabulary is reserved for a keyboard pass.
+That sitting is scheduled. Until then: treat the cleaning as measured and the
+UI as unwitnessed.
 
 ---
 

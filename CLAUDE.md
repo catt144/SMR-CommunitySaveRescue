@@ -26,4 +26,8 @@ name is a gap in that derivation: fix it there first.
 
 Parse sweep before any commit touching Lua (`luaparser`, every file). Owner
 decisions go in the FIX PACK's `docs/PLAYTEST_CHECKLIST.md`, never here.
-⛔ Nothing in this repo has been run in a game yet.
+✅ **Verified UNATTENDED 2026-08-13** (nine-launch matrix, audit-sustained:
+removed 1617 by name / kept both KEEPs / idempotent / residue-zero measured;
+record: fix-pack `docs/agent/reports/D13_VERIFICATION.md` + `archive/rs_*`).
+⛔ NOT `tested`: the attended pass (dialogs on screen) is still owed — the two
+dialogs write no log line and CANNOT be sampled unattended.
