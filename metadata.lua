@@ -6,7 +6,13 @@ return PlaceObj('ModDef', {
 	'title', "Save Rescue",
 	'description', "A one-shot cleanup tool for savegames left behind by the Community Fix Pack and the Community Fix Pack: Opt-In Modules. Install it ONLY AFTER you have uninstalled those mods, load your save once, and it removes what they left in it — most importantly a non-base Drone speed / carry dial, which otherwise keeps boosting your Drones forever. It removes only entries it can name, it keeps the ones that repair your save (the Wind Turbine tech buff), and it writes NOTHING into your save of its own: when it is done you can delete it and nothing of it remains. While either of those mods is still installed this tool deliberately does nothing — they clean up after themselves.",
 	'short_description', "Removes what the Community Fix Pack mods left in a savegame after you uninstalled them. One load, no options, stores nothing of its own.",
-	'last_changes', "Initial pre-release: the curated removal list derived over both shipped mods (docs/agent/reports/D13_EXPOSED_SET.md in the fix pack repo), two one-shot vanilla-body thread heals for saves left by pre-2026-08 builds, and the player report.",
+	-- ⛔ CORRECTED 2026-08-14 (release-3 prompt 1): this string carried a repo
+	-- FILE PATH and two house words. Player-facing strings may not carry either
+	-- (the release chain's rule 4), and the path is doubly wrong here: `docs/` is
+	-- in `ignore_files` below, so the file it names is not in the shipped package
+	-- at all. Licence: the owner's standing 22b word ("change any wordings to
+	-- their accurate versions"); text-only, no behaviour, no version bump.
+	'last_changes', "Initial pre-release. The removal list is derived item by item over the shipped code of both mods rather than by pattern matching, so the tool removes only what it can name. Also included: two one-shot repairs that put a dead meteor timer and an old rain cycle back onto the game's own machinery, for saves left behind by earlier Fix Pack builds, and the on-screen summary of what was removed, what was repaired and what was deliberately kept.",
 	'id', "SMR_CommunitySaveRescue",
 	'author', "catt144",
 	-- pre-release 0.1.0 (major.minor.version); launch prep sets the ship value
