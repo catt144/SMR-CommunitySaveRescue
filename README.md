@@ -60,11 +60,16 @@ persistable globals. Zero Lua errors in any launch. Full record + archived
 logs: the Fix Pack repo, `docs/agent/reports/D13_VERIFICATION.md` +
 `docs/archive/rs_*` (verification), §5 there (audit).
 
-⚠️ **Not yet: an attended pass.** Nobody has watched the two dialogs render on
-screen (they write no log line, so unattended runs cannot sample them), and
-"tested" in the parent project's vocabulary is reserved for a keyboard pass.
-That sitting is scheduled. Until then: treat the cleaning as measured and the
-UI as unwitnessed.
+✅ **The attended pass ran 2026-08-14, and the UI is witnessed.** On a save that
+came by its leftovers honestly — no manufactured residue — the automatic pass
+removed **1566 entries by name**, matching a prediction committed before the
+first launch row for row, and kept the keep-list repair. The three readings no
+log can hold were all watched on screen: the report dialog raised with text
+matching the built function, a cleaned-then-saved save reloaded **silent** with
+the mod still active beside it, and the stand-down notice raised exactly once
+with the packs restored. The parent project granted **`tested`** — its strictest
+tier, reserved for a keyboard pass. Full record: the Fix Pack repo,
+`docs/agent/bugs/D13.md` + `docs/archive/cs_*` logs.
 
 ---
 

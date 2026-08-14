@@ -4,8 +4,18 @@ return PlaceObj('ModDef', {
 	-- global `SMRSaveRescue` and the log tag are code contract; the title is
 	-- the only display name, and the release-prep pass owns any change to it.
 	'title', "Save Rescue",
-	'description', "A one-shot cleanup tool for savegames left behind by the Community Fix Pack and the Community Fix Pack: Opt-In Modules. Install it ONLY AFTER you have uninstalled those mods, load your save once, and it removes what they left in it — most importantly a non-base Drone speed / carry dial, which otherwise keeps boosting your Drones forever. It removes only entries it can name, it keeps the ones that repair your save (the Wind Turbine tech buff), and it writes NOTHING into your save of its own: when it is done you can delete it and nothing of it remains. While either of those mods is still installed this tool deliberately does nothing — they clean up after themselves.",
-	'short_description', "Removes what the Community Fix Pack mods left in a savegame after you uninstalled them. One load, no options, stores nothing of its own.",
+	-- ⛔ CORRECTED 2026-08-14 (release-3 prompt 2, the terminal audit; licence:
+	-- the owner's standing 22b word, text-only, no behaviour, no version bump).
+	-- TWO defects: (1) "load once … delete it" never said to SAVE — the clean
+	-- pass edits the loaded colony, and only the player's next save writes that
+	-- into the file; delete-without-saving keeps the residue forever, with the
+	-- tool gone. (2) "while either of those mods is still installed this tool
+	-- deliberately does nothing" contradicted the shipped PER-MOD stand-down
+	-- (10_SaveRescue.lua owner_present/owner_blocked): with only one mod removed
+	-- the tool DOES clean that mod's leftovers — the mixed case is the design's
+	-- own stated common case.
+	'description', "A one-shot cleanup tool for savegames left behind by the Community Fix Pack and the Community Fix Pack: Opt-In Modules. Install it ONLY AFTER you have uninstalled those mods, load your save once, and it removes what they left in it — most importantly a non-base Drone speed / carry dial, which otherwise keeps boosting your Drones forever. Then save: saving is what writes the cleaned colony into the file. It removes only entries it can name, it keeps the ones that repair your save (the Wind Turbine tech buff), and it writes NOTHING into your save of its own: once you have saved, you can delete it and nothing of it remains. An installed mod cleans up after itself, so this tool only removes what a mod that is gone left behind.",
+	'short_description', "Removes what the Community Fix Pack mods left in a savegame after you uninstalled them. One load and a save, no options, stores nothing of its own.",
 	-- ⛔ CORRECTED 2026-08-14 (release-3 prompt 1): this string carried a repo
 	-- FILE PATH and two house words. Player-facing strings may not carry either
 	-- (the release chain's rule 4), and the path is doubly wrong here: `docs/` is
