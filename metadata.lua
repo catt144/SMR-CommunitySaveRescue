@@ -6,10 +6,13 @@ return PlaceObj('ModDef', {
 	-- ⭐ FAMILY TITLE APPLIED (owner, 2026-08-17, fix-pack checklist 36): the
 	-- family-prefix form pre-approved on 2026-08-15 (checklist 26) lands now,
 	-- under the same day's family rename "Community Fix Pack" → "Relaunched
-	-- Fix Pack"; owner ruled the sibling titles move NOW. Title only; the
-	-- mod remains unpublished (17 hold-off) and its `description` still names
-	-- the old family — sweep it before this ever uploads
-	-- (fix-pack repo, RELEASE_DESCRIPTION_RESCUE.md pre-upload checklist).
+	-- Fix Pack"; owner ruled the sibling titles move NOW, then widened the
+	-- license the same day ("fix any references that you recommend") — the
+	-- `description`/`short_description` below and every player-visible string
+	-- in Code/ now carry the new family name too, renamed IN PLACE. ⚠️ The
+	-- dialog strings changed after the 08-14 witnessed readings: if this
+	-- contingency ever fires, the item-28 pre-upload re-witness launch
+	-- (fix-pack repo, RELEASE_DESCRIPTION_RESCUE.md checklist) covers them.
 	'title', "Relaunched Fix Pack: Save Rescue",
 	-- ⛔ CORRECTED 2026-08-14 (release-3 prompt 2, the terminal audit; licence:
 	-- the owner's standing 22b word, text-only, no behaviour, no version bump).
@@ -21,8 +24,8 @@ return PlaceObj('ModDef', {
 	-- (10_SaveRescue.lua owner_present/owner_blocked): with only one mod removed
 	-- the tool DOES clean that mod's leftovers — the mixed case is the design's
 	-- own stated common case.
-	'description', "A one-shot cleanup tool for savegames left behind by the Community Fix Pack and the Community Fix Pack: Opt-In Modules. Install it ONLY AFTER you have uninstalled those mods, load your save once, and it removes what they left in it — most importantly a non-base Drone speed / carry dial, which otherwise keeps boosting your Drones forever. Then save: saving is what writes the cleaned colony into the file. It removes only entries it can name, it keeps the ones that repair your save (the Wind Turbine tech buff), and it writes NOTHING into your save of its own: once you have saved, you can delete it and nothing of it remains. An installed mod cleans up after itself, so this tool only removes what a mod that is gone left behind.",
-	'short_description', "Removes what the Community Fix Pack mods left in a savegame after you uninstalled them. One load and a save, no options, stores nothing of its own.",
+	'description', "A one-shot cleanup tool for savegames left behind by the Relaunched Fix Pack and the Relaunched Fix Pack: Opt-In Modules. Install it ONLY AFTER you have uninstalled those mods, load your save once, and it removes what they left in it — most importantly a non-base Drone speed / carry dial, which otherwise keeps boosting your Drones forever. Then save: saving is what writes the cleaned colony into the file. It removes only entries it can name, it keeps the ones that repair your save (the Wind Turbine tech buff), and it writes NOTHING into your save of its own: once you have saved, you can delete it and nothing of it remains. An installed mod cleans up after itself, so this tool only removes what a mod that is gone left behind.",
+	'short_description', "Removes what the Relaunched Fix Pack mods left in a savegame after you uninstalled them. One load and a save, no options, stores nothing of its own.",
 	-- ⛔ CORRECTED 2026-08-14 (release-3 prompt 1): this string carried a repo
 	-- FILE PATH and two house words. Player-facing strings may not carry either
 	-- (the release chain's rule 4), and the path is doubly wrong here: `docs/` is

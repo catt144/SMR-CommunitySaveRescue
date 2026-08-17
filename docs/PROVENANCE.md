@@ -1,6 +1,7 @@
 # PROVENANCE — what came from where, and what this repo may not decide alone
 
-This mod is the third repo of the Community Fix Pack family and by far the
+This mod is the third repo of the Relaunched Fix Pack family (named the
+Community Fix Pack family until 2026-08-17) and by far the
 smallest. It exists to answer a question the other two cannot: **what happens to
 a savegame after those mods are uninstalled.** Everything below is here so a
 future session does not have to re-derive it — and so it cannot silently drift
@@ -46,7 +47,7 @@ from the two repos that own the facts.
 | global namespace | `SMRSaveRescue` | ⛔ no |
 | veto global | `SMRSaveRescue_Disabled` | ⛔ no (probes and the console use it) |
 | log tag | `[CommunitySaveRescue]` | ⛔ no — owner's log greps use it |
-| display title | "Save Rescue" | ⚠️ owner-ratified 2026-08-13; the release-prep pass owns any change. ⚠️ Note the sibling mod took a family prefix the same day ("Community Fix Pack: Opt-In Modules") — if the family should be visually consistent in mod lists, this is the title that would move, and it is an owner call |
+| display title | "Save Rescue" → ✅ **"Relaunched Fix Pack: Save Rescue" (applied 2026-08-17)** | ⚠️ owner-ratified 2026-08-13; the release-prep pass owns any change. ⚠️ Note the sibling mod took a family prefix the same day ("Community Fix Pack: Opt-In Modules") — if the family should be visually consistent in mod lists, this is the title that would move, and it is an owner call. ✅ **The call was made**: the family form was pre-approved 2026-08-15 (fix-pack checklist 26), the family renamed Community → Relaunched 2026-08-17 (checklist 36), and the owner's same-day "rename them now" landed the title in `metadata.lua` |
 | repo folder | `C:\Dev\SMR-CommunitySaveRescue` | aligned to the remote the owner pre-created |
 | remote | `github.com/catt144/SMR-CommunitySaveRescue` (PUBLIC) | owner-created |
 

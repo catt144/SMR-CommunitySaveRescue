@@ -3,7 +3,7 @@
 -- ⛔ READ THIS FIRST. This mod is a CLEANER, not a fix pack. Its whole contract
 -- is that it removes named leftovers from a savegame and leaves NOTHING of its
 -- own behind (the "6d" bar of the derivation that specced it —
--- `docs/agent/reports/D13_EXPOSED_SET.md` §10 in the Community Fix Pack repo,
+-- `docs/agent/reports/D13_EXPOSED_SET.md` §10 in the Relaunched Fix Pack repo,
 -- summarised in docs/PROVENANCE.md). Concretely, and these are bans:
 --   * it NEVER calls GameVar. Not even to reach a value: registering a name in
 --     order to clean it would persist that name as OUR residue.

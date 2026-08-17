@@ -1,6 +1,6 @@
 -- Save Rescue — the clean pass.
 --
--- WHAT THIS IS. The Community Fix Pack and its Opt-In Modules leave named data
+-- WHAT THIS IS. The Relaunched Fix Pack and its Opt-In Modules leave named data
 -- in a savegame. Almost all of it is inert once the mods are gone; two things
 -- are not, and one of them keeps changing the game forever: a non-base Drone
 -- speed / carry dial persists as a vanilla `Modifier` under our string id, and
@@ -9,7 +9,7 @@
 --
 -- WHERE THE LIST COMES FROM. `ROWS` below is the curated detection table of the
 -- authoritative exposed-set derivation over BOTH shipped mods —
--- `docs/agent/reports/D13_EXPOSED_SET.md` in the Community Fix Pack repo (§2b
+-- `docs/agent/reports/D13_EXPOSED_SET.md` in the Relaunched Fix Pack repo (§2b
 -- for the sites, §5 for the KEEP/REMOVE reasoning, §10 for this spec). Every
 -- persisted name either mod has ever written has a row, and every row has an
 -- action. ⛔ DETECTION IS BY THIS TABLE ONLY. Never by an `SMRFixPack_*`
@@ -34,7 +34,7 @@ local log = SMRSaveRescue.Log
 --------------------------------------------------------------------------------
 -- The curated table (spec §10.2)
 --
--- owner  — which mod wrote it: "FP" = Community Fix Pack, "OP" = Opt-In Modules.
+-- owner  — which mod wrote it: "FP" = Relaunched Fix Pack, "OP" = Opt-In Modules.
 --          A row acts only while ITS OWNER IS ABSENT (see stand_down below).
 -- kind   — "label-modifier" | "object-field" | "entry-field" | "colony-field"
 --          | "gamevar"
@@ -508,7 +508,7 @@ end
 
 local function report_text(res)
 	local lines = {
-		"This save still carried leftovers from the Community Fix Pack mods. They are now removed. Nothing was added to your save.",
+		"This save still carried leftovers from the Relaunched Fix Pack mods. They are now removed. Nothing was added to your save.",
 	}
 	if next(res.by_noun) then
 		lines[#lines + 1] = "\nRemoved: " .. join(res.by_noun)
@@ -585,7 +585,7 @@ function SMRSaveRescue.RunPass(opts)
 	local res = new_result()
 	res.scanned = opts.scan_only and true or false
 
-	log("Save Rescue %s — list derived over Community Fix Pack cdbcd9d / Opt-In Modules e17586b (2026-08-13)",
+	log("Save Rescue %s — list derived over Relaunched Fix Pack cdbcd9d / Opt-In Modules e17586b (2026-08-13)",
 		tostring(SMRSaveRescue.ModVersion() or "version unreadable"))
 
 	if not SMRSaveRescue.IsActive(ID) then
@@ -606,7 +606,7 @@ function SMRSaveRescue.RunPass(opts)
 		{ "thread heals", function()
 			-- FP-owned: an installed pack heals its own threads on load.
 			if owner_blocked(opts, "FP") then
-				skip(res, "thread heals skipped — the Community Fix Pack is installed and heals its own")
+				skip(res, "thread heals skipped — the Relaunched Fix Pack is installed and heals its own")
 				return
 			end
 			if opts.scan_only then
@@ -644,7 +644,7 @@ function SMRSaveRescue.HealThreads(opts)
 	opts = opts or {}
 	local res = new_result()
 	if owner_blocked(opts, "FP") then
-		skip(res, "thread heals skipped — the Community Fix Pack is installed and heals its own")
+		skip(res, "thread heals skipped — the Relaunched Fix Pack is installed and heals its own")
 	else
 		local ok, err = pcall(function() heal_rains(res) heal_meteors(res) end)
 		if not ok then skip(res, "the thread heals failed: %s", tostring(err)) end
@@ -664,7 +664,7 @@ end
 
 -- Console helper: the whole curated table, with its actions and reasons.
 function SMRSaveRescue.ListResidue()
-	log("curated residue table — %d rows (source: D13_EXPOSED_SET.md in the Community Fix Pack repo)", #ROWS)
+	log("curated residue table — %d rows (source: D13_EXPOSED_SET.md in the Relaunched Fix Pack repo)", #ROWS)
 	for _, row in ipairs(ROWS) do
 		log("  %-5s %-2s %-9s %-22s %s", row.id, row.owner, row.action, row.kind, row.name)
 	end
@@ -673,7 +673,7 @@ end
 --------------------------------------------------------------------------------
 
 SMRSaveRescue.Register(ID, {
-	title = "Removes Community Fix Pack leftovers from a savegame it is no longer installed in",
+	title = "Removes Relaunched Fix Pack leftovers from a savegame it is no longer installed in",
 	apply = function()
 		-- Everything this module touches is savegame state, so there is nothing
 		-- to patch at load time. The self-check is that the API the pass calls
@@ -710,7 +710,7 @@ function OnMsg.PostLoadGame()
 		if (res.stood_down.FP or res.stood_down.OP) and not stand_down_told then
 			stand_down_told = true
 			show("Save Rescue",
-				"The Community Fix Pack (or its Opt-In Modules) is still installed, so there is nothing for this tool to do: while those mods are installed they clean up after themselves.\n\nUninstall them first, then load this save again.")
+				"The Relaunched Fix Pack (or its Opt-In Modules) is still installed, so there is nothing for this tool to do: while those mods are installed they clean up after themselves.\n\nUninstall them first, then load this save again.")
 		end
 		return
 	end

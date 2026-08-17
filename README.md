@@ -1,7 +1,7 @@
 # Save Rescue — Surviving Mars: Relaunched
 
 A one-shot cleanup tool for savegames that were played with the
-**Community Fix Pack** or the **Community Fix Pack: Opt-In Modules** and then
+**Relaunched Fix Pack** or the **Relaunched Fix Pack: Opt-In Modules** and then
 lost them.
 
 **Install it only AFTER you have uninstalled those mods.** Load your save once,
