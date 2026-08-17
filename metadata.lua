@@ -3,7 +3,14 @@ return PlaceObj('ModDef', {
 	-- SMR_CommunitySaveRescue, log tag [CommunitySaveRescue]. The id, the
 	-- global `SMRSaveRescue` and the log tag are code contract; the title is
 	-- the only display name, and the release-prep pass owns any change to it.
-	'title', "Save Rescue",
+	-- ⭐ FAMILY TITLE APPLIED (owner, 2026-08-17, fix-pack checklist 36): the
+	-- family-prefix form pre-approved on 2026-08-15 (checklist 26) lands now,
+	-- under the same day's family rename "Community Fix Pack" → "Relaunched
+	-- Fix Pack"; owner ruled the sibling titles move NOW. Title only; the
+	-- mod remains unpublished (17 hold-off) and its `description` still names
+	-- the old family — sweep it before this ever uploads
+	-- (fix-pack repo, RELEASE_DESCRIPTION_RESCUE.md pre-upload checklist).
+	'title', "Relaunched Fix Pack: Save Rescue",
 	-- ⛔ CORRECTED 2026-08-14 (release-3 prompt 2, the terminal audit; licence:
 	-- the owner's standing 22b word, text-only, no behaviour, no version bump).
 	-- TWO defects: (1) "load once … delete it" never said to SAVE — the clean
